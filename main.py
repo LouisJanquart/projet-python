@@ -108,9 +108,11 @@ def menu():
 louis = Personne("Louis", "Janquart", "01/04/1997", "louis.janquart@gmail.com", "0474 70 58 19", "Chaussée de Charleroi, 16 - 6220 Fleurus")
 emile = Personne("Emile", "Janquart", "01/04/1999", "emile.janquart@gmail.com", "0474 69 15 19", "Chaussée de Charleroi, 16 - 6220 Fleurus")
 appoline = Personne("Appoline", "Janquart", "18/12/2001", "appoline.janquart@gmail.com", "0456 25 26 47", "Chemin de Mons, 33 - 6224 Baulet")
+samuel = Personne("Samuel", "Umtiti")
 
 ajout_listing(listing, louis)
 ajout_listing(listing, emile)
 ajout_listing(listing, appoline)
+ajout_listing(listing, samuel)
 
 menu()
