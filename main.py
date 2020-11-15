@@ -110,6 +110,7 @@ emile = Personne("Emile", "Janquart", "01/04/1999", "emile.janquart@gmail.com", 
 appoline = Personne("Appoline", "Janquart", "18/12/2001", "appoline.janquart@gmail.com", "0456 25 26 47", "Chemin de Mons, 33 - 6224 Baulet")
 samuel = Personne("Samuel", "Umtiti")
 lola = Personne("Lola", "Mini")
+#vgybhnj,kluhijk
 
 ajout_listing(listing, louis)
 ajout_listing(listing, emile)
