@@ -82,39 +82,49 @@ def format(mot, n):
     return mot
 
 def inscription():
+   
     prenom = input("Prénom : ")
     nom = input("Nom : ")
     dateNaissance = input("Date de naissance : ")
     mail = input("Adresse e-mail : ")
     telephone = input("Numéro de téléphone : ")
     adresse = input("Adresse : ")
-    ajout_listing(listing, Personne(prenom, nom, dateNaissance, mail, telephone, adresse))
+
+    #insertion information dans tableau depuis inputs
+    fichier = open("Tableau.txt", "a") 
+    fichier.write(str( Personne(prenom, nom, dateNaissance, mail, telephone, adresse)))
+    fichier.write("\n")
+    fichier.close()
+    
+
     menu()
 
 def menu():
     print("1. Afficher le listing")
     print("2. Inscrire un nouveau membre")
     print("3. Quitter")
+
     choix = 0
+
     while int(choix) < 1 or int(choix) > 3:
         choix = int(input())
+
     if choix == 1:
-        afficher_listing(listing)
+        fichier = open("Tableau.txt", "r")
+        print (fichier.read())
+        fichier.close()
+        input()
+        menu()
     elif choix == 2:
         inscription()
+
     elif choix == 3:
+        fichier = open("Tableau.txt", "a")
+
+        for membre in listing :
+          fichier.write(str (membre))
+          fichier.write("\n")
+        fichier.close()
         return 0
-
-louis = Personne("Louis", "Janquart", "01/04/1997", "louis.janquart@gmail.com", "0474 70 58 19", "Chaussée de Charleroi, 16 - 6220 Fleurus")
-emile = Personne("Emile", "Janquart", "01/04/1999", "emile.janquart@gmail.com", "0474 69 15 19", "Chaussée de Charleroi, 16 - 6220 Fleurus")
-appoline = Personne("Appoline", "Janquart", "18/12/2001", "appoline.janquart@gmail.com", "0456 25 26 47", "Chemin de Mons, 33 - 6224 Baulet")
-samuel = Personne("Samuel", "Umtiti")
-lola = Personne("Lola", "Mini")
-
-ajout_listing(listing, louis)
-ajout_listing(listing, emile)
-ajout_listing(listing, appoline)
-ajout_listing(listing, samuel)
-ajout_listing(listing, lola)
 
 menu()
