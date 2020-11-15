@@ -1,0 +1,12 @@
+Louis | Janquart | 01/04/1997 | louis.janquart@gmail.com | 0474 70 58 19 | Chauss�e de Charleroi, 16 - 6220 Fleurus
+Emile | Janquart | 01/04/1999 | emile.janquart@gmail.com | 0474 69 15 19 | Chauss�e de Charleroi, 16 - 6220 Fleurus
+Appoline | Janquart | 18/12/2001 | appoline.janquart@gmail.com | 0456 25 26 47 | Chemin de Mons, 33 - 6224 Baulet
+Samuel | Umtiti | --/--/---- | mail@mail.com | 0000 00 00 00 | ---
+Lola | Mini | --/--/---- | mail@mail.com | 0000 00 00 00 | ---
+Esteban | Disantp | 01/04/1997 | louis.janquart@gmail.com | 0474 70 58 19 | Chauss�e de Charleroi, 16 - 6220 Fleurus
+Remi | Chomeurse | 01/04/1999 | emile.janquart@gmail.com | 0474 69 15 19 | Chauss�e de Charleroi, 16 - 6220 Fleurus
+Thomas | Weisenberg | 11/12/1893 | arm�@gelguim | 0111111111 | Caserne militaire
+tt | tt | tt | t | t | t
+Thomas | Weisenberg | 11/12/1893 | arm�@gelguim | 0111111111 | Caserne militaire
+Greg | greg | gre | greg | greg | gre
+h | h | h | h | h | h
