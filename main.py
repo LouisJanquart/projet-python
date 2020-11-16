@@ -1,4 +1,4 @@
 from fonctions import *
 
-liste = recup_listing()
-menu(liste)
+listing = recup_listing()
+menu(listing)
