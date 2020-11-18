@@ -1,3 +1,5 @@
+#poulet poulet
+
 class Personne():
     def __init__(self, prenom, nom, dateNaissance = "--/--/----", mail = "mail@mail.com", telephone = "0000 00 00 00", adresse = "---"):
         self._prenom = prenom
