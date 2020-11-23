@@ -4,4 +4,6 @@ from fonctions import *
 listing = recup_listing()
 
 #lancement du programme en console
-menu(listing)
+if __name__ == '__main__':
+    menu(listing)
+
