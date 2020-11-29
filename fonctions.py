@@ -1,6 +1,6 @@
 import os
 import pickle
-from personne import *
+from unite import *
 
 def menu(liste):
     print("1. Afficher le listing")
@@ -30,7 +30,18 @@ def inscription(liste):
     mail = input("Adresse e-mail : ")
     telephone = input("Numéro de téléphone : ")
     adresse = input("Adresse : ")
-    liste.append(Personne(prenom, nom, dateNaissance, mail, telephone, adresse))
+    role = input("Role : ")
+    if role == "chef":
+        dateDebut = input("Date de début : ")
+        liste.append(Chef(prenom, nom, dateNaissance, mail, telephone, adresse, dateDebut))
+    elif role == "anime":
+        badges = input("Badges : ").split()
+        liste.append(Anime(prenom, nom, dateNaissance, mail, telephone, adresse, badges))
+    elif role == "chef d'unite":
+        dateElection = input("Date d'élection : ")
+        liste.append(ChefUnite(prenom, nom, dateNaissance, mail, telephone, adresse, dateElection))
+    else:
+        liste.append(Membre(prenom, nom, dateNaissance, mail, telephone, adresse))
     enregistrer_listing(liste)
 
 def recup_listing():
