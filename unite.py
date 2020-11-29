@@ -1,6 +1,4 @@
-#poulet poulet
-
-class Personne():
+class Membre():
     def __init__(self, prenom, nom, dateNaissance = "--/--/----", mail = "mail@mail.com", telephone = "0000 00 00 00", adresse = "---"):
         self._prenom = prenom
         self._nom = nom
@@ -59,3 +57,46 @@ class Personne():
         self._adresse = adresse
 
     adresse = property(_get_adresse, _set_adresse)
+
+class Chef(Membre):
+
+    def __init__(self, prenom, nom, dateNaissance, mail, telephone, adresse, dateDebut):
+        Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
+        self.dateDebut = dateDebut
+
+    def __repr__(self):
+        return "{} {}".format(self.prenom, self.nom)
+
+class Anime(Membre):
+    def __init__(self, prenom, nom, dateNaissance, mail, telephone, adresse, badges):
+        Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
+        self.badges = badges
+
+    def __repr__(self):
+        return "{} {}".format(self.prenom, self.nom)
+
+class ChefUnite(Membre):
+    def __init__(self, prenom, nom, dateNaissance, mail, telephone, adresse, dateElection):
+        Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
+        self.dateElection = dateElection
+
+    def __repr__(self):
+        return "{} {}".format(self.prenom, self.nom)
+
+class Unite():
+    def __init__(self, nom, sigle, chefsUnite):
+        self.nom = nom
+        self.sigle = sigle
+        self.chefsUnite = chefsUnite
+
+    def __repr__(self):
+        return self.nom
+
+class Section():
+    def __init__(self, nom, chefs, animes):
+        self.nom = nom
+        self.chefs = chefs
+        self.animes = animes
+
+    def __repr__(self):
+        return self.nom
