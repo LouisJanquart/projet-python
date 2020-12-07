@@ -1,3 +1,4 @@
 ﻿venv
 .idea
 listing
+__pycache__
