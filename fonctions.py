@@ -1,8 +1,14 @@
 import os
 import pickle
 from unite import *
+from operator import attrgetter
 
 def menu(liste):
+    """Call a function depending on the choice made
+
+    PRE : parameter 'liste' must be a list
+    POST : ?
+    """
     print("1. Afficher le listing")
     print("2. Inscrire un nouveau membre")
     print("3. Quitter")
@@ -58,3 +64,6 @@ def enregistrer_listing(liste):
     with open('listing', 'wb') as fichier:
         mon_pickler = pickle.Pickler(fichier)
         mon_pickler.dump(liste)
+
+def trier_listing(liste, critere):
+    return sorted(liste, key=attrgetter(critere))
