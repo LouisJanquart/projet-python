@@ -64,24 +64,15 @@ class Chef(Membre):
         Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
         self.dateDebut = dateDebut
 
-    def __repr__(self):
-        return "{} {}".format(self.prenom, self.nom)
-
 class Anime(Membre):
     def __init__(self, prenom, nom, dateNaissance, mail, telephone, adresse, badges):
         Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
         self.badges = badges
 
-    def __repr__(self):
-        return "{} {}".format(self.prenom, self.nom)
-
 class ChefUnite(Membre):
     def __init__(self, prenom, nom, dateNaissance, mail, telephone, adresse, dateElection):
         Membre.__init__(self, prenom, nom, dateNaissance, mail, telephone, adresse)
         self.dateElection = dateElection
-
-    def __repr__(self):
-        return "{} {}".format(self.prenom, self.nom)
 
 class Unite():
     def __init__(self, nom, sigle, chefsUnite):
