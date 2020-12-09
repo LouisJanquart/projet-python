@@ -26,43 +26,44 @@ def menu(liste):
         return 0
 
 def afficher_listing(liste):
+    listing = ""
     for membre in liste:
-        print(membre)
+        listing += str(membre) + '\n'
+    return listing
 
-def inscription(liste):
-    prenom = input("Prénom : ")
-    nom = input("Nom : ")
-    dateNaissance = input("Date de naissance : ")
-    mail = input("Adresse e-mail : ")
-    telephone = input("Numéro de téléphone : ")
-    adresse = input("Adresse : ")
-    role = input("Role : ")
-    if role == "chef":
-        dateDebut = input("Date de début : ")
-        liste.append(Chef(prenom, nom, dateNaissance, mail, telephone, adresse, dateDebut))
-    elif role == "anime":
-        badges = input("Badges : ").split()
-        liste.append(Anime(prenom, nom, dateNaissance, mail, telephone, adresse, badges))
-    elif role == "chef d'unite":
-        dateElection = input("Date d'élection : ")
-        liste.append(ChefUnite(prenom, nom, dateNaissance, mail, telephone, adresse, dateElection))
-    else:
-        liste.append(Membre(prenom, nom, dateNaissance, mail, telephone, adresse))
+def inscription(liste, prenom, nom, dateNaissance, mail, telephone, adresse):
+#    prenom = input("Prénom : ")
+#    nom = input("Nom : ")
+#    dateNaissance = input("Date de naissance : ")
+#    mail = input("Adresse e-mail : ")
+#    telephone = input("Numéro de téléphone : ")
+#    adresse = input("Adresse : ")
+#    role = input("Role : ")
+#    if role == "chef":
+#        dateDebut = input("Date de début : ")
+#        liste.append(Chef(prenom, nom, dateNaissance, mail, telephone, adresse, dateDebut))
+#    elif role == "anime":
+#        badges = input("Badges : ").split()
+#        liste.append(Anime(prenom, nom, dateNaissance, mail, telephone, adresse, badges))
+#    elif role == "chef d'unite":
+#        dateElection = input("Date d'élection : ")
+#        liste.append(ChefUnite(prenom, nom, dateNaissance, mail, telephone, adresse, dateElection))
+#   else:
+    liste.append(Membre(prenom, nom, dateNaissance, mail, telephone, adresse))
     enregistrer_listing(liste)
 
 def recup_listing():
-    if os.path.exists("listing"):
-        fichier_listing = open("listing", "rb")
-        mon_depickler = pickle.Unpickler(fichier_listing)
-        listing = mon_depickler.load()
-        fichier_listing.close()
+    if os.path.exists('listing'):
+        with open('listing', 'rb') as file:
+            mon_depickler = pickle.Unpickler(file)
+            listing = mon_depickler.load()
     else:
         listing = []
     return listing
 
 def enregistrer_listing(liste):
-    with open('listing', 'wb') as fichier:
-        mon_pickler = pickle.Pickler(fichier)
+    with open('listing', 'wb') as file:
+        mon_pickler = pickle.Pickler(file)
         mon_pickler.dump(liste)
 
 def trier_listing(liste, critere):
