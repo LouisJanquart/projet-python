@@ -1,0 +1,73 @@
+#:import fonctions fonctions
+#:import interface interface
+<Interface>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+            Button:
+                text: 'Listing'
+                on_press: root.display_listing()
+            Button:
+                text: 'Inscription'
+                on_press: root.display_inscription()
+        BoxLayout:
+            id: content
+            orientation: 'vertical'
+
+
+<Info>:
+    canvas.before:
+        Color:
+            rgba: 1, 0, 0.5, 0.9
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    size_hint: None, None
+    size: self.texture_size
+    padding: 10, 10
+
+<Inscription>:
+    orientation: 'vertical'
+    BoxLayout:
+        Label:
+            text: 'Prénom'
+            padding: 10, 10
+        TextInput:
+            id: prenom
+    BoxLayout:
+        Label:
+            text: 'Nom'
+            padding: 10, 10
+        TextInput:
+            id: nom
+    BoxLayout:
+        Label:
+            text: 'Date de naissance'
+            padding: 10, 10
+        TextInput:
+            id: dateNaissance
+    BoxLayout:
+        Label:
+            text: 'Adresse e-mail'
+            padding: 10, 10
+        TextInput:
+            id: mail
+    BoxLayout:
+        Label:
+            text: 'Numéro de téléphone'
+            padding: 10, 10
+        TextInput:
+            id: telephone
+    BoxLayout:
+        Label:
+            text: 'Adresse'
+            padding: 10, 10
+        TextInput:
+            id: adresse
+    Button:
+        text: 'Inscrire'
+        size_hint_y: None
+        height: 50
+        on_press: fonctions.inscription(fonctions.recup_listing(), prenom.text, nom.text, dateNaissance.text, mail.text, telephone.text, adresse.text)
