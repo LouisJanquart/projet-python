@@ -7,8 +7,28 @@ from fonctions import recup_listing
 class Info(Label):
     pass
 
-class Inscription(BoxLayout):
+class Anime(BoxLayout):
     pass
+
+class Chef(BoxLayout):
+    pass
+
+class CU(BoxLayout):
+    pass
+
+class Inscription(BoxLayout):
+    def display_question(self, role):
+        layout = self.ids['question']
+        layout.clear_widgets()
+        if role == 'anime':
+            print('anime')
+            layout.add_widget(Anime())
+        elif role == 'chef':
+            print('chef')
+            layout.add_widget(Chef())
+        elif role == 'cu':
+            print('cu')
+            layout.add_widget(CU())
 
 class Interface(BoxLayout):
     def display_listing(self):
