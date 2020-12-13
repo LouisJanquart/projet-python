@@ -66,8 +66,62 @@
             padding: 10, 10
         TextInput:
             id: adresse
+    BoxLayout:
+        Label:
+            text: 'Rôle'
+            padding: 10, 10
+        BoxLayout:
+            Button:
+                id: btn
+                text: 'Choisir'
+                on_parent: dropdown.dismiss()
+                on_release: dropdown.open(self)
+            DropDown:
+                id: dropdown
+                on_select: btn.text = '{}'.format(args[1])
+                Button:
+                    text: 'Anime'
+                    on_release: dropdown.select('Anime')
+                    on_release: root.display_question('anime')
+                    size_hint_y: None
+                    height: 50
+                Button:
+                    text: 'Chef'
+                    on_release: dropdown.select('Chef')
+                    on_release: root.display_question('chef')
+                    size_hint_y: None
+                    height: 50
+                Button:
+                    text: 'Chef d\'unité'
+                    on_release: dropdown.select('Chef d\'unité')
+                    on_release: root.display_question('cu')
+                    size_hint_y: None
+                    height: 50
+    BoxLayout:
+        id: question
     Button:
         text: 'Inscrire'
         size_hint_y: None
         height: 50
         on_press: fonctions.inscription(fonctions.recup_listing(), prenom.text, nom.text, dateNaissance.text, mail.text, telephone.text, adresse.text)
+
+<Anime>:
+    Label:
+        text: 'Badges'
+        padding: 10, 10
+    TextInput:
+        id: badges
+
+<Chef>:
+    Label:
+        text: 'Année de début'
+        padding: 10, 10
+    TextInput:
+        id: debut
+
+<CU>:
+    Label:
+        text: 'Année d\'élection'
+        padding: 10, 10
+    TextInput:
+        id: election
